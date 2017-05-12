@@ -4,15 +4,15 @@ import nz.co.bnz.webdriver.WebDriverFixture;
 import nz.govt.ird.payekiwisaverdeductionscalculator.EmployeeDetailsPage;
 import nz.govt.ird.payekiwisaverdeductionscalculator.SummaryPage;
 import nz.govt.ird.payekiwisaverdeductionscalculator.UserAndTaxYearPage;
-
-import org.concordion.api.FullOGNL;
+import org.concordion.api.option.ConcordionOptions;
+import org.concordion.api.option.MarkdownExtensions;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RunWith(ConcordionRunner.class)
-@FullOGNL
+@ConcordionOptions(markdownExtensions={MarkdownExtensions.DEFINITIONS})
 public class PAYEKiwisaverDeductionsCalculatorTest extends WebDriverFixture {
 
     private static final Logger LOG = LoggerFactory.getLogger(PAYEKiwisaverDeductionsCalculatorTest.class);
