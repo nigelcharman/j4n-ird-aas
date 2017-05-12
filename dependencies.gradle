@@ -5,4 +5,5 @@ dependencies {
     compile('org.slf4j:slf4j-simple:1.7.10')
     compile('org.concordion:concordion:2.1.0')
     compile('org.concordion:concordion-screenshot-extension:1.1.2')
+    compile('org.concordion:concordion-input-style-extension:0.1')
 }
