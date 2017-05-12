@@ -80,9 +80,4 @@ public class WebDriverFixture {
         }
         return driver;
     }
-
-    public void logExample(String exampleText) {
-        LOG.info("Running example: " + exampleText.replaceAll("(?:\\s\\s+)", " "));
-    }
-
 }
