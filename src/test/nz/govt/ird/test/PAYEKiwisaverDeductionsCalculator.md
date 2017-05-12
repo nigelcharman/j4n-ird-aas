@@ -1,20 +1,23 @@
 # IRD PAYE Kiwisaver Deductions Calculator
 
-## [Example: Calculate Employee PAYE](- "testEmployeePAYE")
+I am an employee who wants to calculate my PAYE for the current tax year. 
+When I enter my personal details, they will appear on my PAYE summary. 
 
+## [Example: Calculate Employee PAYE](- "testEmployeePAYE")
 
 Given
 : I am an employee who wants to [calculate my PAYE](- "enterUserAndTaxDetails()") for the current tax year
 
-
 When
-: I [enter my personal details and pay](- "enterPayDetails()") information
+: my name [Test User](- "#name"), reference number [TEST1234](- "#reference"), sex [M](- "#sex"), 
+payment frequency [Weekly](- "#frequency") and pay amount [1024.00](- "#pay") [Net](- "#netOrGross") 
+are [entered](- "enterPayDetails(#name, #reference, #sex, #frequency, #pay, #netOrGross)") 
 
 Then
 : I can see a PAYE summary with the following details:
 
-* [Name](- "c:assertTrue=hasName()")
-* [Reference Number](- "c:assertTrue=hasReferenceNumber()")
-* [Tax Code](- "c:assertTrue=hasTaxCode()")
-* [Payment Frequency](- "c:assertTrue=hasPayFrequency()")
-* [Pay Amount](- "c:assertTrue=hasPayAmount()")
+* [Test User](- "?=getName()")
+* [TEST1234](- "?=getReferenceNumber()")
+* [M](- "?=getTaxCode()")
+* [Weekly](- "?=getPayFrequency()")
+* [$1,024.00 net](- "?=getPayAmount()")

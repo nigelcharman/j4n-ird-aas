@@ -22,28 +22,28 @@ public class PAYEKiwisaverDeductionsCalculatorTest extends WebDriverFixture {
         userTaxYearPage.enterUserAndTaxDetails("Employee", "1 April 2017 to 31 March 2018");
     }
 
-    public void enterPayDetails() {
+    public void enterPayDetails(String name, String reference, String taxCode, String payFrequency, String perPay, String netOrGross) {
         EmployeeDetailsPage employeeDetailsPage = EmployeeDetailsPage.fetch(getWebDriver());
-        employeeDetailsPage.enterPayDetails("Test User", "TEST1234", "M", "Weekly", "1,024.00", "Net");
+        employeeDetailsPage.enterPayDetails(name, reference, taxCode, payFrequency, perPay, netOrGross);
     }
 
-    public boolean hasName() {
-        return SummaryPage.fetch(getWebDriver()).getName().contentEquals("Test User");
+    public String getName() {
+        return SummaryPage.fetch(getWebDriver()).getName();
     }
 
-    public boolean hasReferenceNumber() {
-        return SummaryPage.fetch(getWebDriver()).getReferenceNumber().contentEquals("TEST1234");
+    public String getReferenceNumber() {
+        return SummaryPage.fetch(getWebDriver()).getReferenceNumber();
     }
 
-    public boolean hasTaxCode() {
-        return SummaryPage.fetch(getWebDriver()).getTaxCode().contentEquals("M");
+    public String getTaxCode() {
+        return SummaryPage.fetch(getWebDriver()).getTaxCode();
     }
 
-    public boolean hasPayFrequency() {
-        return SummaryPage.fetch(getWebDriver()).getPayFrequency().contentEquals("Weekly");
+    public String getPayFrequency() {
+        return SummaryPage.fetch(getWebDriver()).getPayFrequency();
     }
 
-    public boolean hasPayAmount() {
-        return SummaryPage.fetch(getWebDriver()).getPayAmount().contentEquals("$1,024.00 net");
+    public String getPayAmount() {
+        return SummaryPage.fetch(getWebDriver()).getPayAmount();
     }
 }
