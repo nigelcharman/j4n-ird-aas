@@ -16,8 +16,15 @@ sourceSets {
         }
     }
     test {
+        java {
+            srcDirs "src/test"
+        }
         resources {
             srcDirs "src/test"
         }
     }
+}
+
+test {
+    testLogging.events 'standard_out'
 }
